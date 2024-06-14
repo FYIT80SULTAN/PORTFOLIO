@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Access Control</title>
+
+    <!-- FAVICON -->
+    <link rel="icon" type="png" href="Images/favicon-16x16.png">
+
+
+    <!-- GOOGLE FONTS LINK -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <!-- ICONS LINK -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/line-awesome/css/line-awesome.min.css"
+        integrity="sha512-vebUliqxrVkBy3gucMhClmyQP9On/HAWQdKDXRaAlb/FKuTbxkjPKUyqVOxAcGwFDka79eTF+YXwfke1h3/wfg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+
+    <!-- BOOTSTRAP LINK -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+
+    <!-- CSS FILE -->
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+
+    <style>
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+            /* Full viewport height */
+            margin: 0;
+            /* Remove default margin */
+            font-family: Arial, sans-serif;
+            text-align: center;
+            /* Center-align text */
+        }
+
+        .center-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .image-text-container {
+            text-align: center;
+            /* Center-align text below image */
+        }
+
+        .image {
+            width: 100%;
+            /* Responsive width */
+            max-width: 600px;
+            /* Adjust max-width as needed */
+            height: auto;
+            /* Maintain aspect ratio */
+        }
+
+        .text {
+            margin-top: 10px;
+            /* Space between image and text */
+            font-size: 25px;
+            /* Font size for the text */
+            color: #353535;
+            font-weight: 600;
+            /* Text color */
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .image {
+                max-width: 80%;
+                /* Adjust max-width for tablets and smaller devices */
+            }
+
+            .text {
+                font-size: 16px;
+                /* Smaller font size for smaller screens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .image {
+                max-width: 90%;
+                /* Adjust max-width for mobile devices */
+            }
+
+            .text {
+                font-size: 14px;
+                /* Smaller font size for small mobile screens */
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="center-container">
+        <div class="image-text-container">
+            <img src="Images/search-engines-animate.svg" alt="Description of image" class="image">
+            <p class="text" id="message"></p>
+        </div>
+    </div>
+
+
+    <script>
+        window.onload = function () {
+            var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+            var messageElement = document.getElementById('message');
+
+            if (isMobile) {
+                messageElement.innerHTML = "Sorry, this website is only accessible from Laptops or PCs.";
+            } else {
+                window.location.href = 'portfolio.php';
+            }
+        };
+    </script>
+</body>
+
+</html>
